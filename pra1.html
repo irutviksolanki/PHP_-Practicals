@@ -1,0 +1,32 @@
+<html>
+<body>
+
+    <form name="form1" action="#">
+
+    <font size=5><font color="black"><input type="text" placeholder="Username" name="text1"><br /><br /></font>
+
+    <font size=5><font color="white"><input type="password" placeholder="Password" name="text2"><br /><br /></font>
+
+    <font size=5><input type="submit" value="Login" onclick="Validate(document.form1.text1,document.form1.text2)"></font>
+
+    </form>
+
+<script type="text/javascript">
+function Validate(t1,t2)   
+{   
+	var regularExpression1  =  /^.*(?=.{6,20})(?=.*[a-z]).*$/;
+	var regularExpression2  = /^.*(?=.{8,12})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&!-_]).*$/;
+	if(t1.value.match(regularExpression1) && t2.value.match(regularExpression2))   
+	{   
+		alert("Login Success");
+		return true;  
+	}  
+	else  
+	{   
+		alert("Please Enter Correct Username And Password");
+		return false; 
+	}  
+}    
+</script>  
+</body>  
+</html>  
